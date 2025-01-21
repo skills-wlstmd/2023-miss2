@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/scripts/
+hooks:
+  AfterInstall:
+    - location: scripts/AfterInstall.sh
+      timeout: 60
+      runas: root
+  ApplicationStart:
+    - location: scripts/ApplicationStart.sh
+      timeout: 60
+      runas: root
+  ApplicationStop:
+    - location: scripts/ApplicationStop.sh
+      timeout: 60
+      runas: root
